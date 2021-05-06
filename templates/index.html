@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<form method="post" action="/home/index">
+    {{ form.csrf_token }}
+    {{form.search}}
+    {{form.submit}}
+</form>
+<h2>Город: {{ town }}; Температура: {{ temperature }}; Погода: {{ weather }}; Ветер: {{ wind }} м/с</h2>
+<img src="https://openweathermap.org/img/wn/{{ image }}@2x.png">
+
+{% endblock %}
